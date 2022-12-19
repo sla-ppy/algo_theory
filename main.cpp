@@ -108,6 +108,10 @@ void logarithmic_search(const std::vector<int> &sorted_array) {
     std::cout << result << '\n';
 }
 
+void copy(const std::vector<int> &array) {
+    
+}
+
 int main() {
     std::vector<int> array = {3, 17 ,2, 15, 72, 15, 41, 67};
     std::vector<int> sorted_array = {2, 3, 15, 15, 17, 41, 67, 72};
@@ -117,10 +121,15 @@ int main() {
     decision(array);
     selection(array);
     count(array);
+     */
+    copy(array);
+
+    /*
+    linear_search(array);
+    logarithmic_search(sorted_array);
     */
 
-    //linear_search(array);
-    logarithmic_search(sorted_array);
+
 
     return 0;
 }

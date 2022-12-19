@@ -8,19 +8,29 @@
 ---
 
 ## Elementary
-- Sum
-- Decision
-- Selection
-- Count
-- Max / Min
-- Union
-- Intersection
+| | |
+| ----------- | ----------- |
+| Sum      | Összegzés(Sorozatszámítás) tétele |
+| Decision | Eldöntés tétele        |
+| Selection| Kiválasztás tétele       |
+| Count| Megszámlálás tétele        |
+| Max / Min| Maximum / Minimumkiválasztás tétele       |
+| Union | Unióképzés tétele        |
+| Intersection | Metszetképzés        |
+| | |
 
 ## Search
-- Linear Search
-- Binary / Logaritmic Search
+| | |
+| ----------- | ----------- |
+| Lineáris keresés | Linear Search |
+| Bináris / Logaritmikus keresés | Bianry / Logarithmic Search |
+| | |
 
 ## Sorting
+| | |
+| ----------- | ----------- |
+| - | - |
+| | |
 
 ---
 
@@ -38,7 +48,7 @@ What is the very first element's index?
 ### Count
 We return the amount of elements inside the array with property T.
 
-### Max / Min
+### Max / Min value
 
 
 ### Union ( A∪B )
