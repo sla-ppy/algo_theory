@@ -48,7 +48,11 @@ What is the very first element's index?
 ### Count
 We return the amount of elements inside the array with property T.
 
+### Copy
+We put all elements with property T into a separate array.
+
 ### Max / Min value
+
 
 
 ### Union ( A∪B )

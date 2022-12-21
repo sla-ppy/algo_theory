@@ -109,7 +109,24 @@ void logarithmic_search(const std::vector<int> &sorted_array) {
 }
 
 void copy(const std::vector<int> &array) {
-    
+    // IN:
+    std::vector<int> new_array;
+    int property{15};
+
+    int amount{0};
+    int i{0};
+    while(i < array.size()) {
+        if (array[i] == property) {
+            new_array[amount] = array[i];
+            amount++;
+        }
+        i++;
+    }
+
+    // OUT:
+    for (int j = 0; j < new_array.size(); ++j) {
+        std::cout << new_array[j] << '\n';
+    }
 }
 
 int main() {
