@@ -4,7 +4,7 @@
 // FIXME: rename all functions to start with uppercase letters
 // FIXME: go through all functions and check the algos since i misinterpreted the pseudo code im working from
 
-void sum(const std::vector<int> &array) {
+void Sum(const std::vector<int> &array) {
     // IN:;
     int sum{0};
     for (int i = 0; i < array.size(); ++i) {
@@ -14,7 +14,7 @@ void sum(const std::vector<int> &array) {
     // OUT: 15
     std::cout << sum << '\n';
 };
-void count(const std::vector<int> &array) {
+void Count(const std::vector<int> &array) {
     // IN:
     int property{15};
 
@@ -30,7 +30,7 @@ void count(const std::vector<int> &array) {
     // OUT:
     std::cout << count << '\n';
 }
-void decision(const std::vector<int> &array) {
+void Decision(const std::vector<int> &array) {
     // IN:
     int property{15};
 
@@ -49,7 +49,7 @@ void decision(const std::vector<int> &array) {
         std::cout << "No element found with the property!" << '\n';
     }
 }
-void selection(const std::vector<int> &array) {
+void Selection(const std::vector<int> &array) {
     // we know that there is an element with the property inside the array
     //IN:
     int property{15};
@@ -62,7 +62,7 @@ void selection(const std::vector<int> &array) {
     // OUT:
     std::cout << i << '\n';
 }
-void copy(const std::vector<int> &array) {
+void Copy(const std::vector<int> &array) {
     // IN:
     std::vector<int> new_array;
     int property{15};
@@ -82,7 +82,7 @@ void copy(const std::vector<int> &array) {
         std::cout << new_array[j] << '\n';
     }
 }
-void max(const std::vector<int> &array) {
+void Max(const std::vector<int> &array) {
     // IN:
     int result{0};
 
@@ -95,7 +95,7 @@ void max(const std::vector<int> &array) {
     //OUT:
     std::cout << result << '\n';
 }
-void min(const std::vector<int> &array) {
+void Min(const std::vector<int> &array) {
     // IN:
     int result{0};
 
@@ -109,7 +109,7 @@ void min(const std::vector<int> &array) {
     std::cout << result << '\n';
 }
 
-void unio_n(const std::vector<int> &array, const std::vector<int> &other_array) {
+void Union(const std::vector<int> &array, const std::vector<int> &other_array) {
     // IN:
     // A, B arrays
     std::vector<int> result;
@@ -141,11 +141,11 @@ void unio_n(const std::vector<int> &array, const std::vector<int> &other_array) 
         std::cout << result[i] << '\n';
     }
 }
-void intersection(const std::vector<int> &array, const std::vector<int> &other_array) {
+void Intersection(const std::vector<int> &array, const std::vector<int> &other_array) {
 
 }
 
-void linear_search(const std::vector<int> &array) {
+void Linear_search(const std::vector<int> &array) {
     // linear_search == decision + selection
     // IN:
     int property{15};
@@ -164,7 +164,7 @@ void linear_search(const std::vector<int> &array) {
 
     std::cout << result << '\n';
 }
-void logarithmic_search(const std::vector<int> &sorted_array) {
+void Logarithmic_search(const std::vector<int> &sorted_array) {
     // the input has to be sorted!
     // IN:
     int property{41};
@@ -199,21 +199,21 @@ int main() {
     std::vector<int> other_array = {1, 54, 17, 29, 67, 31};
 
     /*
-    sum(array);
-    count(array);
-    decision(array);
-    selection(array);
-    copy(array);
-    max(array);
-    min(array);
+    Sum(array);
+    Count(array);
+    Decision(array);
+    Selection(array);
+    Copy(array);
+    Max(array);
+    Min(array);
     */
 
-    unio_n(array, other_array);
-    //intersection(array, other_array);
+    Union(array, other_array);
+    //Intersection(array, other_array);
 
     /*
-    linear_search(array);
-    logarithmic_search(sorted_array);
+    Linear_search(array);
+    Logarithmic_search(sorted_array);
     */
 
     return 0;
