@@ -11,6 +11,22 @@ void sum(const std::vector<int> &array) {
     // OUT: 15
     std::cout << sum << '\n';
 };
+void count(const std::vector<int> &array) {
+    // IN:
+    int property{15};
+
+    int count{0};
+    int i{0};
+    while(i < array.size()) {
+        if (array[i] == property) {
+            count++;
+        }
+        i++;
+    }
+
+    // OUT:
+    std::cout << count << '\n';
+}
 void decision(const std::vector<int> &array) {
     // IN:
     int property{15};
@@ -43,21 +59,52 @@ void selection(const std::vector<int> &array) {
     // OUT:
     std::cout << i << '\n';
 }
-void count(const std::vector<int> &array) {
+void copy(const std::vector<int> &array) {
     // IN:
+    std::vector<int> new_array;
     int property{15};
 
-    int count{0};
+    int amount{0};
     int i{0};
     while(i < array.size()) {
         if (array[i] == property) {
-            count++;
+            new_array[amount] = array[i];
+            amount++;
         }
         i++;
     }
 
     // OUT:
-    std::cout << count << '\n';
+    for (int j = 0; j < new_array.size(); ++j) {
+        std::cout << new_array[j] << '\n';
+    }
+}
+
+void max(const std::vector<int> &array) {
+    // IN:
+    int result{0};
+
+    for (int i = 1; i < array.size(); ++i) {
+        if (array[result] < array[i]) {
+            result = i;
+        }
+    }
+
+    //OUT:
+    std::cout << result << '\n';
+}
+void min(const std::vector<int> &array) {
+    // IN:
+    int result{0};
+
+    for (int i = 1; i < array.size(); ++i) {
+        if (array[result] > array[i]) {
+            result = i;
+        }
+    }
+
+    //OUT:
+    std::cout << result << '\n';
 }
 
 void linear_search(const std::vector<int> &array) {
@@ -108,45 +155,27 @@ void logarithmic_search(const std::vector<int> &sorted_array) {
     std::cout << result << '\n';
 }
 
-void copy(const std::vector<int> &array) {
-    // IN:
-    std::vector<int> new_array;
-    int property{15};
-
-    int amount{0};
-    int i{0};
-    while(i < array.size()) {
-        if (array[i] == property) {
-            new_array[amount] = array[i];
-            amount++;
-        }
-        i++;
-    }
-
-    // OUT:
-    for (int j = 0; j < new_array.size(); ++j) {
-        std::cout << new_array[j] << '\n';
-    }
-}
-
 int main() {
     std::vector<int> array = {3, 17 ,2, 15, 72, 15, 41, 67};
     std::vector<int> sorted_array = {2, 3, 15, 15, 17, 41, 67, 72};
 
     /*
     sum(array);
+    count(array);
     decision(array);
     selection(array);
-    count(array);
-     */
     copy(array);
+     */
+
+    /*
+    max(array);
+    min(array);
+    */
 
     /*
     linear_search(array);
     logarithmic_search(sorted_array);
     */
-
-
 
     return 0;
 }

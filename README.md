@@ -52,7 +52,7 @@ We return the amount of elements inside the array with property T.
 We put all elements with property T into a separate array.
 
 ### Max / Min value
-
+Return the element with the greatest, lowest value or their index in the array.
 
 
 ### Union ( A∪B )
@@ -60,6 +60,8 @@ We put all elements with property T into a separate array.
 
 ### Intersection ( A∩B )
 ![](assets/img/intersection.png)
+
+
 
 ---
 
