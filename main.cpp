@@ -1,6 +1,9 @@
 #include <iostream>
 #include <vector>
 
+// FIXME: rename all functions to start with uppercase letters
+// FIXME: go through all functions and check the algos since i misinterpreted the pseudo code im working from
+
 void sum(const std::vector<int> &array) {
     // IN:;
     int sum{0};
@@ -79,7 +82,6 @@ void copy(const std::vector<int> &array) {
         std::cout << new_array[j] << '\n';
     }
 }
-
 void max(const std::vector<int> &array) {
     // IN:
     int result{0};
@@ -105,6 +107,42 @@ void min(const std::vector<int> &array) {
 
     //OUT:
     std::cout << result << '\n';
+}
+
+void unio_n(const std::vector<int> &array, const std::vector<int> &other_array) {
+    // IN:
+    // A, B arrays
+    std::vector<int> result;
+
+    // 1. add all elements of A array to C array
+    for (int i = 0; i < array.size(); ++i) {
+        result.push_back(array[i]);
+    }
+
+    // 2. take the count of A array
+    int result_amount = array.size();
+
+    // 3.
+    for (int j = 0; j < other_array.size(); ++j) {
+        int i{0};
+        while(i < array.size() && array[i] != other_array[j]) {
+            i++;
+        }
+        if (i >= array.size()) {
+            // FIXME: maybe it would be better if we just used a primitive array so it works?
+            result[result_amount] = other_array[j];
+            result_amount++;
+        }
+    }
+
+    // OUT:
+    // C array
+    for (int i = 0; i < result_amount; ++i) {
+        std::cout << result[i] << '\n';
+    }
+}
+void intersection(const std::vector<int> &array, const std::vector<int> &other_array) {
+
 }
 
 void linear_search(const std::vector<int> &array) {
@@ -158,6 +196,7 @@ void logarithmic_search(const std::vector<int> &sorted_array) {
 int main() {
     std::vector<int> array = {3, 17 ,2, 15, 72, 15, 41, 67};
     std::vector<int> sorted_array = {2, 3, 15, 15, 17, 41, 67, 72};
+    std::vector<int> other_array = {1, 54, 17, 29, 67, 31};
 
     /*
     sum(array);
@@ -165,12 +204,12 @@ int main() {
     decision(array);
     selection(array);
     copy(array);
-     */
-
-    /*
     max(array);
     min(array);
     */
+
+    unio_n(array, other_array);
+    //intersection(array, other_array);
 
     /*
     linear_search(array);

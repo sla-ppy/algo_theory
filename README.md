@@ -22,8 +22,8 @@
 ## Search
 | | |
 | ----------- | ----------- |
-| Lineáris keresés | Linear Search |
-| Bináris / Logaritmikus keresés | Bianry / Logarithmic Search |
+| Linear Search | Lineáris keresés |
+| Bianry / Logarithmic Search | Bináris / Logaritmikus keresés |
 | | |
 
 ## Sorting
