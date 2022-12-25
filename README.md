@@ -23,7 +23,7 @@
 | | |
 | ----------- | ----------- |
 | Linear Search | Lineáris keresés |
-| Bianry / Logarithmic Search | Bináris / Logaritmikus keresés |
+| Binary / Logarithmic Search | Bináris / Logaritmikus keresés |
 | | |
 
 ## Sorting

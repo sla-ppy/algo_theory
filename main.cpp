@@ -1,14 +1,14 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
-// FIXME: rename all functions to start with uppercase letters
 // FIXME: go through all functions and check the algos since i misinterpreted the pseudo code im working from
 
 void Sum(const std::vector<int> &array) {
     // IN:;
     int sum{0};
-    for (int i = 0; i < array.size(); ++i) {
-        sum += array[i];
+    for (int i : array) {
+        sum += i;
     }
 
     // OUT: 15
@@ -78,8 +78,8 @@ void Copy(const std::vector<int> &array) {
     }
 
     // OUT:
-    for (int j = 0; j < new_array.size(); ++j) {
-        std::cout << new_array[j] << '\n';
+    for (int j : new_array) {
+        std::cout << j << '\n';
     }
 }
 void Max(const std::vector<int> &array) {
@@ -109,40 +109,42 @@ void Min(const std::vector<int> &array) {
     std::cout << result << '\n';
 }
 
-void Union(const std::vector<int> &array, const std::vector<int> &other_array) {
+void Union(const std::vector<int> &A, const std::vector<int> &B) {
     // IN:
     // A, B arrays
     std::vector<int> result;
 
-    // 1. add all elements of A array to C array
-    for (int i = 0; i < array.size(); ++i) {
-        result.push_back(array[i]);
-    }
+    // 1. copy A into C
+    result = A;
 
-    // 2. take the count of A array
-    int result_amount = array.size();
-
-    // 3.
-    for (int j = 0; j < other_array.size(); ++j) {
-        int i{0};
-        while(i < array.size() && array[i] != other_array[j]) {
-            i++;
-        }
-        if (i >= array.size()) {
-            // FIXME: maybe it would be better if we just used a primitive array so it works?
-            result[result_amount] = other_array[j];
-            result_amount++;
+    // 2. copy B into C, check for duplicates
+    for (int j : B) {
+        // check if element exists
+        if(std::find(A.begin(), A.end(), j) == A.end()) {
+            result.push_back(j);
         }
     }
 
     // OUT:
-    // C array
-    for (int i = 0; i < result_amount; ++i) {
-        std::cout << result[i] << '\n';
+    // C
+    for (int i : result) {
+        std::cout << i << '\n';
     }
 }
-void Intersection(const std::vector<int> &array, const std::vector<int> &other_array) {
+void Intersection(const std::vector<int> &A, const std::vector<int> &B) {
+    std::vector<int> result;
 
+    for (int a : A) {
+        for (int b : B) {
+            if (a == b) {
+                result.push_back(a);
+            }
+        }
+    }
+
+    for (int i : result) {
+        std::cout << i << '\n';
+    }
 }
 
 void Linear_search(const std::vector<int> &array) {
@@ -196,6 +198,7 @@ void Logarithmic_search(const std::vector<int> &sorted_array) {
 int main() {
     std::vector<int> array = {3, 17 ,2, 15, 72, 15, 41, 67};
     std::vector<int> sorted_array = {2, 3, 15, 15, 17, 41, 67, 72};
+
     std::vector<int> other_array = {1, 54, 17, 29, 67, 31};
 
     /*
@@ -207,9 +210,11 @@ int main() {
     Max(array);
     Min(array);
     */
-
+    
+    /*
     Union(array, other_array);
-    //Intersection(array, other_array);
+    Intersection(array, other_array);
+    /*
 
     /*
     Linear_search(array);
