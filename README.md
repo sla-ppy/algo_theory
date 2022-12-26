@@ -47,7 +47,7 @@
 | Bubble Sort + Variants | |
 | ----------- | ----------- |
 | Bubble Sort | Buborék rendezés |
-| Comb sort | Összefésülő rendezés |
+| Comb Sort | Összefésülő rendezés |
 | | |
 
 ---
@@ -112,5 +112,17 @@ We always try to find a new middle inside the array, that way we can completely 
 
 ---
 
-### Sorting
+### Selection Sort
 
+### Another Sort
+To eliminate needless sorting steps, we introduce two cache variables.
+
+### Insertion Sort
+
+### Shellsort
+
+### Quicksort
+
+### Bubble Sort
+
+### Comb Sort
