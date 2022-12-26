@@ -4,114 +4,93 @@
 
 // FIXME: go through all functions and check the algos since i misinterpreted the pseudo code im working from
 
-void Sum(const std::vector<int> &array) {
-    // IN:;
+void Sum(const std::vector<int> &A) {
     int sum{0};
-    for (int i : array) {
+
+    for (int i : A) {
         sum += i;
     }
 
-    // OUT: 15
     std::cout << sum << '\n';
-};
-void Count(const std::vector<int> &array) {
-    // IN:
+}
+void Count(const std::vector<int> &A) {
     int property{15};
 
     int count{0};
-    int i{0};
-    while(i < array.size()) {
-        if (array[i] == property) {
+    for(int i : A) {
+        if (A[i] == property) {
             count++;
         }
-        i++;
     }
 
-    // OUT:
     std::cout << count << '\n';
 }
-void Decision(const std::vector<int> &array) {
-    // IN:
+void Decision(const std::vector<int> &A) {
     int property{15};
 
     int i{0};
-    // the main benefit of a while loop here is because we want to stop as soon as we found the very first element with the property
-    // so we do not need to loop through the whole array itself
-    // tldr; saves time and resources
-    while(i < array.size() && array[i] != property) {
+    // while loop since we stop at the very first element with the property, waste of resources to loop through the full array
+    while(i < A.size() && A[i] != property) {
         i++;
     }
 
-    // OUT:
-    if(i < array.size()) {
+    if(i < A.size()) {
         std::cout << "Element with property found!" << '\n';
     } else {
         std::cout << "No element found with the property!" << '\n';
     }
 }
-void Selection(const std::vector<int> &array) {
-    // we know that there is an element with the property inside the array
-    //IN:
+void Selection(const std::vector<int> &A) {
+    // we are aware that there is an element with the property inside the A
     int property{15};
 
     int i{0};
-    while(array[i] != property) {
+    while(A[i] != property) {
         i++;
     }
 
-    // OUT:
     std::cout << i << '\n';
 }
-void Copy(const std::vector<int> &array) {
-    // IN:
-    std::vector<int> new_array;
+void Copy(const std::vector<int> &A) {
+    std::vector<int> result;
     int property{15};
 
     int amount{0};
-    int i{0};
-    while(i < array.size()) {
-        if (array[i] == property) {
-            new_array[amount] = array[i];
+    for(int i : A) {
+        if (A[i] == property) {
+            result.push_back(A[i]);
             amount++;
         }
-        i++;
     }
 
-    // OUT:
-    for (int j : new_array) {
+    for (int j : result) {
         std::cout << j << '\n';
     }
 }
-void Max(const std::vector<int> &array) {
-    // IN:
-    int result{0};
+void MaxValue(const std::vector<int> &A) {
+    int result{A[0]};
 
-    for (int i = 1; i < array.size(); ++i) {
-        if (array[result] < array[i]) {
+    for (int i : A) {
+        if (result < i) {
             result = i;
         }
     }
 
-    //OUT:
     std::cout << result << '\n';
 }
-void Min(const std::vector<int> &array) {
-    // IN:
-    int result{0};
+void MinValue(const std::vector<int> &A) {
+    int result{A[0]};
 
-    for (int i = 1; i < array.size(); ++i) {
-        if (array[result] > array[i]) {
+    for (int i : A) {
+        if (result > i) {
             result = i;
         }
     }
 
-    //OUT:
     std::cout << result << '\n';
 }
 
 void Union(const std::vector<int> &A, const std::vector<int> &B) {
-    // IN:
-    // A, B arrays
     std::vector<int> result;
 
     // 1. copy A into C
@@ -125,7 +104,6 @@ void Union(const std::vector<int> &A, const std::vector<int> &B) {
         }
     }
 
-    // OUT:
     // C
     for (int i : result) {
         std::cout << i << '\n';
@@ -143,23 +121,24 @@ void Intersection(const std::vector<int> &A, const std::vector<int> &B) {
         }
     }
 
+    // C
     for (int i : result) {
         std::cout << i << '\n';
     }
 }
 
-void LinearSearch(const std::vector<int> &array) {
+void LinearSearch(const std::vector<int> &A) {
     // linear_search == decision + selection
-    // IN:
     int property{15};
 
-    int result{0};
     int i{0};
-    while(i < array.size() && array[i] != property) {
+    while(i < A.size() && A[i] != property) {
         i++;
     }
-    // OUT:
-    if (i < array.size()) {
+
+    int result{0};
+
+    if (i < A.size()) {
         result = i;
     } else {
         result = -1;
@@ -167,24 +146,23 @@ void LinearSearch(const std::vector<int> &array) {
 
     std::cout << result << '\n';
 }
-void LogarithmicSearch(const std::vector<int> &sorted_array) {
+void LogarithmicSearch(const std::vector<int> &A_sorted) {
     // the input has to be sorted!
-    // IN:
     int property{41};
     int result{0};
     int lower_range{0};
-    int upper_range = sorted_array.size() -1;
+    int upper_range = A_sorted.size() - 1;
 
     int i{0};
     do {
         i = (lower_range + upper_range) / 2;
-        if(sorted_array[i] < property) {
+        if(A_sorted[i] < property) {
             lower_range = i++;
         }
-        if(sorted_array[i] > property) {
+        if(A_sorted[i] > property) {
             upper_range = i--;
         }
-    } while (lower_range <= upper_range && sorted_array[i] != property);
+    } while (lower_range <= upper_range && A_sorted[i] != property);
 
     if(lower_range <= upper_range) {
         result = i;
@@ -192,41 +170,40 @@ void LogarithmicSearch(const std::vector<int> &sorted_array) {
         result = -1;
     }
 
-    // OUT:
     std::cout << result << '\n';
 }
 
-void SelectionSort(const std::vector<int> &array) {
+void SelectionSort(const std::vector<int> &A) {
 
 }
 
 int main() {
-    std::vector<int> array = {3, 17 ,2, 15, 72, 15, 41, 67};
-    std::vector<int> sorted_array = {2, 3, 15, 15, 17, 41, 67, 72};
+    std::vector<int> A = {3, 17 , 2, 15, 72, 15, 41, 67};
+    std::vector<int> A_sorted = {2, 3, 15, 15, 17, 41, 67, 72};
 
-    std::vector<int> other_array = {1, 54, 17, 29, 67, 31};
+    std::vector<int> B = {1, 54, 17, 29, 67, 31};
 
     /*
-    Sum(array);
-    Count(array);
-    Decision(array);
-    Selection(array);
-    Copy(array);
-    Max(array);
-    Min(array);
+    Sum(A);
+    Count(A);
+    Decision(A);
+    Selection(A);
+    Copy(A);
+    MaxValue(A);
+    MinValue(A);
     */
 
     /*
-    Union(array, other_array);
-    Intersection(array, other_array);
-    /*
-
-    /*
-    LinearSearch(array);
-    LogarithmicSearch(sorted_array);
+    Union(A, B);
+    Intersection(A, B);
     */
 
-    SelectionSort(array);
+    /*
+    LinearSearch(A);
+    LogarithmicSearch(A_sorted);
+    */
+
+    //SelectionSort(A);
 
     return 0;
 }
