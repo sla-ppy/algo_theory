@@ -87,7 +87,7 @@ Return the element with the greatest, lowest value or their index in the array.
 
 ### Intersection ( A∩B )
 ![](assets/img/intersection.png)    
-**!!! We assume that neither array contains duplicates of the same element !!!**  
+**!!! We assume that none of the input contains duplicates of the same element !!!**  
 
 **IN**:	A, B arrays  
 
