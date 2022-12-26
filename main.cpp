@@ -2,8 +2,6 @@
 #include <vector>
 #include <algorithm>
 
-// FIXME: go through all functions and check the algos since i misinterpreted the pseudo code im working from
-
 void Sum(const std::vector<int> &A) {
     int sum{0};
 
@@ -173,8 +171,76 @@ void LogarithmicSearch(const std::vector<int> &A_sorted) {
     std::cout << result << '\n';
 }
 
+// FIXME: naming for functions
 void SelectionSort(const std::vector<int> &A) {
+    std::vector<int> result = A;
 
+    for(int i : result) {
+        std::cout << i << '\n';
+    }
+
+    // 1. pick lowest element
+    for (int i = 0; i < result.size() -1; ++i) {
+        for (int j = i +1; j < result.size(); ++j) {
+            if (result[j] < result[i]) {
+                int cache = result[j];
+                result[j] = result[i];
+                result[i] = cache;
+            }
+        }
+    }
+
+    std::cout << "------AFTER SORTING------" << '\n';
+    for(int i : result) {
+        std::cout << i << '\n';
+    }
+}
+void AnotherSort(const std::vector<int> &A) {
+    std::vector<int> result = A;
+
+    for(int i : result) {
+        std::cout << i << '\n';
+    }
+
+    for (int i = 0; i < result.size() -1; ++i) {
+        int index{i};
+        int value = result[i];
+
+        for (int j = i +1; j < result.size(); ++j) {
+            if (value > result[j]) {
+                value = result[j];
+                index = j;
+            }
+        }
+
+        result[index] = result[i];
+        result[i] = value;
+    }
+
+    std::cout << "------AFTER SORTING------" << '\n';
+    for(int i : result) {
+        std::cout << i << '\n';
+    }
+}
+// FIXME: bubble sort is unfinished
+void BubbleSort(const std::vector<int> &A) {
+    std::vector<int> result = A;
+
+    for(int i : result) {
+        std::cout << i << '\n';
+    }
+
+    for (auto it = result.end(); it != result.begin(); ++it) {
+        for (auto jt = it +1; jt < it; ++jt) {
+
+        }
+    }
+
+
+    std::cout << "------AFTER SORTING------" << '\n';
+    for(int i : result) {
+        std::cout << i << '\n';
+    }
 }
 
 int main() {
@@ -204,6 +270,8 @@ int main() {
     */
 
     //SelectionSort(A);
+    //AnotherSort(A);
+    BubbleSort(A);
 
     return 0;
 }
