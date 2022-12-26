@@ -136,6 +136,7 @@ void Intersection(const std::vector<int> &A, const std::vector<int> &B) {
 
     for (int a : A) {
         for (int b : B) {
+            // when the elements are the same, they are in both
             if (a == b) {
                 result.push_back(a);
             }
@@ -147,7 +148,7 @@ void Intersection(const std::vector<int> &A, const std::vector<int> &B) {
     }
 }
 
-void Linear_search(const std::vector<int> &array) {
+void LinearSearch(const std::vector<int> &array) {
     // linear_search == decision + selection
     // IN:
     int property{15};
@@ -166,7 +167,7 @@ void Linear_search(const std::vector<int> &array) {
 
     std::cout << result << '\n';
 }
-void Logarithmic_search(const std::vector<int> &sorted_array) {
+void LogarithmicSearch(const std::vector<int> &sorted_array) {
     // the input has to be sorted!
     // IN:
     int property{41};
@@ -195,6 +196,10 @@ void Logarithmic_search(const std::vector<int> &sorted_array) {
     std::cout << result << '\n';
 }
 
+void SelectionSort(const std::vector<int> &array) {
+
+}
+
 int main() {
     std::vector<int> array = {3, 17 ,2, 15, 72, 15, 41, 67};
     std::vector<int> sorted_array = {2, 3, 15, 15, 17, 41, 67, 72};
@@ -210,16 +215,18 @@ int main() {
     Max(array);
     Min(array);
     */
-    
+
     /*
     Union(array, other_array);
     Intersection(array, other_array);
     /*
 
     /*
-    Linear_search(array);
-    Logarithmic_search(sorted_array);
+    LinearSearch(array);
+    LogarithmicSearch(sorted_array);
     */
+
+    SelectionSort(array);
 
     return 0;
 }

@@ -10,13 +10,17 @@
 ## Elementary
 | | |
 | ----------- | ----------- |
-| Sum      | Összegzés(Sorozatszámítás) tétele |
-| Decision | Eldöntés tétele        |
-| Selection| Kiválasztás tétele       |
-| Count| Megszámlálás tétele        |
-| Max / Min| Maximum / Minimumkiválasztás tétele       |
-| Union | Unióképzés tétele        |
-| Intersection | Metszetképzés        |
+| Sum      | Összegzés(Sorozatszámítás) |
+| Decision | Eldöntés tétele |
+| Selection| Kiválasztás |
+| Count| Megszámlálás |
+| Max / Min| Maximum / Minimumkiválasztás |
+
+## Set
+| | |
+| ----------- | ----------- |
+| Union | Unióképzés |
+| Intersection | Metszetképzés |
 | | |
 
 ## Search
@@ -27,9 +31,25 @@
 | | |
 
 ## Sorting
-| | |
+| Simple Sorts | |
 | ----------- | ----------- |
-| - | - |
+| X | Rendezés közvetlen kiválasztással |
+| X | Rendezés minimum kiválasztással |
+| Insertion Sort | Egyszerű beillesztéses rendezés |
+| | |
+
+---
+
+| Efficient sorts | |
+| ----------- | ----------- |
+| Sheelsort | Shell-módszer beszúrással |
+| Quicksort | Gyorsrendezés |
+| | |
+
+| Bubble Sort + Variants | |
+| ----------- | ----------- |
+| Bubble Sort | Buborék rendezés |
+| Comb sort | Összefésülő rendezés |
 | | |
 
 ---
