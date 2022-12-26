@@ -75,7 +75,8 @@ Return the element with the greatest, lowest value or their index in the array.
 ---
 
 ### Union ( A∪B )
-**!!! We assume that none of the input contains duplicates of the same element !!!**  
+**!!! We assume that none of the input contains duplicates of the same element !!!**
+
 ![](assets/img/union.png)  
 **IN**:	A, B arrays  
 
@@ -86,8 +87,9 @@ Return the element with the greatest, lowest value or their index in the array.
 **OUT**: C array
 
 ### Intersection ( A∩B )
-![](assets/img/intersection.png)    
-**!!! We assume that none of the input contains duplicates of the same element !!!**  
+**!!! We assume that none of the input contains duplicates of the same element !!!**
+
+![](assets/img/intersection.png)  
 
 **IN**:	A, B arrays  
 
@@ -111,5 +113,4 @@ We always try to find a new middle inside the array, that way we can completely 
 ---
 
 ### Sorting
-
 
