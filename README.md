@@ -38,8 +38,6 @@
 | Insertion Sort | Egyszerű beillesztéses rendezés |
 | | |
 
----
-
 | Efficient sorts | |
 | ----------- | ----------- |
 | Sheelsort | Shell-módszer beszúrással |
@@ -74,14 +72,29 @@ We put all elements with property T into a separate array.
 ### Max / Min value
 Return the element with the greatest, lowest value or their index in the array.
 
+---
 
 ### Union ( A∪B )
-![](assets/img/union.png)
+**!!! We assume that none of the input contains duplicates of the same element !!!**  
+![](assets/img/union.png)  
+**IN**:	A, B arrays  
+
+**ALGO**  
+1. Copy all elements from A into C
+2. Select elements from B and put them into C if they are not yet present in C
+
+**OUT**: C array
 
 ### Intersection ( A∩B )
-![](assets/img/intersection.png)
+![](assets/img/intersection.png)    
+**!!! We assume that neither array contains duplicates of the same element !!!**  
 
+**IN**:	A, B arrays  
 
+**ALGO**  
+1. Check all elements of A with all elements of B and if both have the same element put it into C.
+
+**OUT**: C array
 
 ---
 
