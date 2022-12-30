@@ -171,7 +171,7 @@ void LogarithmicSearch(const std::vector<int> &A_sorted) {
     std::cout << result << '\n';
 }
 
-// FIXME: naming for functions
+// FIXME: naming for sorting algos
 void SelectionSort(const std::vector<int> &A) {
     std::vector<int> result = A;
 
@@ -183,7 +183,7 @@ void SelectionSort(const std::vector<int> &A) {
     for (int i = 0; i < result.size() -1; ++i) {
         for (int j = i +1; j < result.size(); ++j) {
             if (result[j] < result[i]) {
-                int cache = result[j];
+                int cache = result[j];  // std::swap() does the same thing!
                 result[j] = result[i];
                 result[i] = cache;
             }
@@ -242,6 +242,38 @@ void BubbleSort(const std::vector<int> &A) {
         std::cout << i << '\n';
     }
 }
+// apparently quicksort is the most important to know, will revisit the other algos as currently there are more important things to learnű
+// FIXME: undone algo
+void QuickSort(const std::vector<int> &A) {
+    std::vector<int> input = A;
+    std::vector<int> result;
+
+    int lower{2}; // min algo
+    int upper{72}; // max algo
+    int pivot{input[lower]}; // aka. current
+
+    while(lower < upper) {
+        while(lower < upper && input[upper] >= pivot) {
+            upper--;
+        }
+
+        if(lower < upper) {
+            input[lower] = input[upper];
+            lower++;
+
+            while(lower < upper && input[lower] <= pivot) {
+                lower++;
+            }
+
+            if(lower < upper) {
+                input[upper] = input[lower];
+                upper--;
+            }
+        }
+    }
+
+    input[lower] = pivot;
+}
 
 int main() {
     std::vector<int> A = {3, 17 , 2, 15, 72, 15, 41, 67};
@@ -257,21 +289,18 @@ int main() {
     Copy(A);
     MaxValue(A);
     MinValue(A);
-    */
 
-    /*
     Union(A, B);
     Intersection(A, B);
-    */
 
-    /*
     LinearSearch(A);
     LogarithmicSearch(A_sorted);
-    */
 
-    //SelectionSort(A);
-    //AnotherSort(A);
+    SelectionSort(A);
+    AnotherSort(A);
     BubbleSort(A);
+    */
+    QuickSort(A);
 
     return 0;
 }

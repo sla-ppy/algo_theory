@@ -111,6 +111,31 @@ What is the very first element's index?
 We always try to find a new middle inside the array, that way we can completely ignore one of the sides we are sure the answer isn't in. 
 
 ---
+### Generally
+Quicksort is the most common, effective sorting algorithm.
+
+The worst time complexity for it begged me to wonder if there is another alternative.
+
+Merge/Heap sort turned out to be more stable than quicksort.
+
+However quicksort's issue about specific input scenaries can be fought with:  
+Introsort, which is what `std::sort` uses in C++ too.
+
+Introsort is a mix of quicksort's efficiency, heap sort's stableness and median of medians.
+There is also Timsort, which I haven't researched yet, but its generally used in most programming languages.
+
+For the future:  
+Definitely learn all the sorting algorithms, since each algo can be used the most efficiently based on the input.
+For example: bubble sort could be even more efficient than quicksort in a partly sorted out array of
+
+TODO:  
+Research the environments which are most fruitful for the most efficient sort algos.
+
+Source(s):  
+https://youtu.be/_dlzWEJoU7I  
+https://en.wikipedia.org/wiki/Introsort
+https://www.bigocheatsheet.com/
+
 
 ### Selection Sort
 
