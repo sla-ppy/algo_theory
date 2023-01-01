@@ -135,6 +135,16 @@ Source(s):
 https://youtu.be/_dlzWEJoU7I  
 https://en.wikipedia.org/wiki/Introsort
 https://www.bigocheatsheet.com/
+https://youtu.be/UqmKiz2P0Lw
+https://youtu.be/kgBjXUE_Nwc
+non comperative sorting
+https://www.codercorner.com/RadixSortRevisited.htm
+https://developer.nvidia.com/gpugems/gpugems3/part-vi-gpu-computing/chapter-39-parallel-prefix-sum-scan-cuda
+
+https://teachyourselfcs.com/
+Books:
+https://www.amazon.com/Designing-Data-Intensive-Applications-Reliable-Maintainable/dp/1449373321#customerReviews
+https://www.amazon.com/Computer-Systems-Programmers-Perspective-3rd/dp/013409266X#customerReviews
 
 
 ### Selection Sort

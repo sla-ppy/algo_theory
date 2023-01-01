@@ -65,18 +65,7 @@ void Copy(const std::vector<int> &A) {
         std::cout << j << '\n';
     }
 }
-void MaxValue(const std::vector<int> &A) {
-    int result{A[0]};
-
-    for (int i : A) {
-        if (result < i) {
-            result = i;
-        }
-    }
-
-    std::cout << result << '\n';
-}
-void MinValue(const std::vector<int> &A) {
+int MinValue(const std::vector<int> &A) {
     int result{A[0]};
 
     for (int i : A) {
@@ -85,7 +74,18 @@ void MinValue(const std::vector<int> &A) {
         }
     }
 
-    std::cout << result << '\n';
+    return result;
+}
+int MaxValue(const std::vector<int> &A) {
+    int result{A[0]};
+
+    for (int i : A) {
+        if (result < i) {
+            result = i;
+        }
+    }
+
+    return result;
 }
 
 void Union(const std::vector<int> &A, const std::vector<int> &B) {
@@ -244,35 +244,44 @@ void BubbleSort(const std::vector<int> &A) {
 }
 // apparently quicksort is the most important to know, will revisit the other algos as currently there are more important things to learnű
 // FIXME: undone algo
-void QuickSort(const std::vector<int> &A) {
-    std::vector<int> input = A;
-    std::vector<int> result;
+int Partition(const std::vector<int> &A, const int &lower, const int &upper) {
+    std::vector<int> array = A;
+    int low = lower;
+    int high = upper;
+    int current = array[lower];
 
-    int lower{2}; // min algo
-    int upper{72}; // max algo
-    int pivot{input[lower]}; // aka. current
-
-    while(lower < upper) {
-        while(lower < upper && input[upper] >= pivot) {
-            upper--;
+    while(low < high) {
+        while(low < high && array[high] >= current) {
+            high--;
         }
-
-        if(lower < upper) {
-            input[lower] = input[upper];
-            lower++;
-
-            while(lower < upper && input[lower] <= pivot) {
-                lower++;
+        if(low < high) {
+            array[low] = array[high];
+            low++;
+            while(low < high && array[low] <= current) {
+                low++;
             }
-
-            if(lower < upper) {
-                input[upper] = input[lower];
-                upper--;
+            if(low < high) {
+                array[high] = array[low];
+                high--;
             }
         }
     }
+    array[low] = current;
+    int pivot = low;
 
-    input[lower] = pivot;
+    return pivot;
+}
+
+void QuickSort(const std::vector<int> &A, const int &lower, const int &upper) {
+    int pivot = Partition(A, lower, upper);
+
+    if(lower < pivot -1) {
+        QuickSort(A, lower, pivot -1);
+    }
+    if(pivot +1 < upper) {
+        QuickSort(A, pivot +1, upper);
+    }
+
 }
 
 int main() {
@@ -300,7 +309,13 @@ int main() {
     AnotherSort(A);
     BubbleSort(A);
     */
-    QuickSort(A);
+
+    std::vector<int> qs_array = {4, 10, 8, 7, 6, 5, 3, 12, 14, 2};
+
+    QuickSort(A, MinValue(A), MaxValue(A));
+    for(int i : A) {
+        std::cout << i << '\n';
+    }
 
     return 0;
 }
