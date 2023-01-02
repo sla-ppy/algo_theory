@@ -129,21 +129,22 @@ Definitely learn all the sorting algorithms, since each algo can be used the mos
 For example: bubble sort could be even more efficient than quicksort in a partly sorted out array of
 
 TODO:  
-Research the environments which are most fruitful for the most efficient sort algos.
+Research the environments where each sorting algorithm is the most applicable at.
 
 Source(s):  
-https://youtu.be/_dlzWEJoU7I  
-https://en.wikipedia.org/wiki/Introsort
-https://www.bigocheatsheet.com/
-https://youtu.be/UqmKiz2P0Lw
+https://youtu.be/_dlzWEJoU7I    
+https://en.wikipedia.org/wiki/Introsort  
+https://www.bigocheatsheet.com/  
+https://youtu.be/UqmKiz2P0Lw  
 https://youtu.be/kgBjXUE_Nwc
-non comperative sorting
-https://www.codercorner.com/RadixSortRevisited.htm
-https://developer.nvidia.com/gpugems/gpugems3/part-vi-gpu-computing/chapter-39-parallel-prefix-sum-scan-cuda
 
-https://teachyourselfcs.com/
-Books:
-https://www.amazon.com/Designing-Data-Intensive-Applications-Reliable-Maintainable/dp/1449373321#customerReviews
+non comperative sorting  
+https://www.codercorner.com/RadixSortRevisited.htm  
+https://developer.nvidia.com/gpugems/gpugems3/part-vi-gpu-computing/chapter-39-parallel-prefix-sum-scan-cuda
+  
+https://teachyourselfcs.com/  
+Books:  
+https://www.amazon.com/Designing-Data-Intensive-Applications-ReliableMaintainable/dp/1449373321#customerReviews  
 https://www.amazon.com/Computer-Systems-Programmers-Perspective-3rd/dp/013409266X#customerReviews
 
 
@@ -161,3 +162,35 @@ To eliminate needless sorting steps, we introduce two cache variables.
 ### Bubble Sort
 
 ### Comb Sort
+
+---
+
+## Asymptotic Analysis
+Asymptotic analysis deals with analyzing the
+properties of the running time when the input
+size goes to infinity.
+
+
+| Asymptotic analysis notations | Definition |
+| ----------- | ----------- |
+| **Θ** | Asymptotically tight bounds. If a function is both **O** and **Ω**, then they are **Θ**  |
+| **O** | Asymptotic upper bound  |
+| **Ω** | Asymptotic lower bound  |
+| **o** | Denote an upper bound that is not asymptotically tight |
+| **ω** | Denote a lower bound that is not asymptotically tight.  | 
+| | |
+
+Analogy between asymptotic comparison and the comparison of two real numbers.
+| Asymptotic comparison | Real number comparison |
+| ----------- | ----------- |
+| f(n) = O(g(n)) | a <= b |
+| f(n) = Ω(g(n)) | a >= b |
+| f(n) = Θ(g(n)) | a = b |
+| f(n) = o(g(n)) | a < b |
+| f(n) = ω(g(n)) | a > b |
+| | |
+
+---
+
+## Stack 
+

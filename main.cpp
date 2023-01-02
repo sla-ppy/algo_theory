@@ -244,29 +244,8 @@ void BubbleSort(const std::vector<int> &A) {
 }
 // apparently quicksort is the most important to know, will revisit the other algos as currently there are more important things to learnű
 // FIXME: undone algo
-int Partition(const std::vector<int> &_A, int p, int r) {
-    std::vector<int> A = _A;
-
-    int x = A[r];
-    int i = p-1;
-    for (int j = p; j < r-1; ++j) {
-        if (A[j] <= x) {
-            i++;
-            std::swap(A[i], A[j]);
-        }
-        std::swap(A[i+1], A[r]);
-    }
-    return i+1;
-}
-
-void QuickSort(const std::vector<int> &_A, int p, int r) {
-    std::vector<int> A = _A;
-
-    if(p < r) {
-        int q = Partition(A, p ,r);
-        QuickSort(A, p, q-1);
-        QuickSort(A, q+1, r);
-    }
+void QuickSort() {
+    std::cout << "It sure is lonely here..." << '\n';
 }
 
 int main() {
@@ -296,8 +275,11 @@ int main() {
     */
 
     std::vector<int> qs_array = {10, 7, 12, 6, 3, 2, 8};
-    QuickSort(qs_array, MinValue(qs_array), MaxValue(qs_array));
+    Quick(qs_array, MinValue(qs_array), MaxValue(qs_array));
 
+    for(int i : qs_array) {
+        std::cout << i << '\n';
+    }
 
     return 0;
 }
