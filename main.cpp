@@ -244,44 +244,29 @@ void BubbleSort(const std::vector<int> &A) {
 }
 // apparently quicksort is the most important to know, will revisit the other algos as currently there are more important things to learnű
 // FIXME: undone algo
-int Partition(const std::vector<int> &A, const int &lower, const int &upper) {
-    std::vector<int> array = A;
-    int low = lower;
-    int high = upper;
-    int current = array[lower];
+int Partition(const std::vector<int> &_A, int p, int r) {
+    std::vector<int> A = _A;
 
-    while(low < high) {
-        while(low < high && array[high] >= current) {
-            high--;
+    int x = A[r];
+    int i = p-1;
+    for (int j = p; j < r-1; ++j) {
+        if (A[j] <= x) {
+            i++;
+            std::swap(A[i], A[j]);
         }
-        if(low < high) {
-            array[low] = array[high];
-            low++;
-            while(low < high && array[low] <= current) {
-                low++;
-            }
-            if(low < high) {
-                array[high] = array[low];
-                high--;
-            }
-        }
+        std::swap(A[i+1], A[r]);
     }
-    array[low] = current;
-    int pivot = low;
-
-    return pivot;
+    return i+1;
 }
 
-void QuickSort(const std::vector<int> &A, const int &lower, const int &upper) {
-    int pivot = Partition(A, lower, upper);
+void QuickSort(const std::vector<int> &_A, int p, int r) {
+    std::vector<int> A = _A;
 
-    if(lower < pivot -1) {
-        QuickSort(A, lower, pivot -1);
+    if(p < r) {
+        int q = Partition(A, p ,r);
+        QuickSort(A, p, q-1);
+        QuickSort(A, q+1, r);
     }
-    if(pivot +1 < upper) {
-        QuickSort(A, pivot +1, upper);
-    }
-
 }
 
 int main() {
@@ -310,12 +295,9 @@ int main() {
     BubbleSort(A);
     */
 
-    std::vector<int> qs_array = {4, 10, 8, 7, 6, 5, 3, 12, 14, 2};
+    std::vector<int> qs_array = {10, 7, 12, 6, 3, 2, 8};
+    QuickSort(qs_array, MinValue(qs_array), MaxValue(qs_array));
 
-    QuickSort(A, MinValue(A), MaxValue(A));
-    for(int i : A) {
-        std::cout << i << '\n';
-    }
 
     return 0;
 }
