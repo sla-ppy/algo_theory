@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <stack>
 
 void Sum(const std::vector<int> &A) {
     int sum{0};
@@ -248,6 +249,29 @@ void QuickSort() {
     std::cout << "It sure is lonely here..." << '\n';
 }
 
+void Stack(const std::vector<int> &_A) {
+    // LIFO - Last In First Out
+    std::vector<int> A = _A;
+
+    std::stack<int> stack;
+    std::cout << "Size before pushing the array to the stack: " <<stack.size() << '\n';
+
+    for(int i : A) {
+        stack.push(i);
+    }
+    std::cout << "Size after filling up: "<< stack.size() << '\n';
+
+    // traversing stack with pointers
+    int* stackPtr = &stack.top();
+    std::cout << "Pointing to top element: " << *stackPtr << '\n';
+    stackPtr--;
+    std::cout << "Still pointing to top element (which is different by now): " << *stackPtr << '\n';
+
+    std::cout << "Before pop: " << stack.top() << '\n';
+    stack.pop();
+    std::cout << "After pop: " << stack.top() << '\n';
+}
+
 int main() {
     std::vector<int> A = {3, 17 , 2, 15, 72, 15, 41, 67};
     std::vector<int> A_sorted = {2, 3, 15, 15, 17, 41, 67, 72};
@@ -272,14 +296,16 @@ int main() {
     SelectionSort(A);
     AnotherSort(A);
     BubbleSort(A);
-    */
 
+    // Quicksort
     std::vector<int> qs_array = {10, 7, 12, 6, 3, 2, 8};
     Quick(qs_array, MinValue(qs_array), MaxValue(qs_array));
-
     for(int i : qs_array) {
         std::cout << i << '\n';
     }
+    */
+
+    Stack(A);
 
     return 0;
 }
