@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <stack>
+#include <queue>
 
 void Sum(const std::vector<int> &A) {
     int sum{0};
@@ -271,6 +272,26 @@ void Stack(const std::vector<int> &_A) {
     stack.pop();
     std::cout << "After pop: " << stack.top() << '\n';
 }
+void Queue(const std::vector<int> &A) {
+    std::queue<int> queue;
+
+    for(int i : A) {
+        queue.push(i);
+    }
+
+    // 3, 17 , 2, 15, 72, 15, 41, 67
+    std::cout << "Front: " <<queue.front() << '\n';
+    std::cout << "Back: " <<queue.back() << '\n';
+
+    // remove first 3
+    for (int i = 0; i < 3; ++i) {
+        queue.pop();
+    }
+
+    // 15, 72, 15, 41, 67
+    std::cout << "Front after pop: " << queue.front() << '\n';
+    std::cout << "Back after pop: " << queue.back() << '\n';
+}
 
 int main() {
     std::vector<int> A = {3, 17 , 2, 15, 72, 15, 41, 67};
@@ -303,9 +324,10 @@ int main() {
     for(int i : qs_array) {
         std::cout << i << '\n';
     }
-    */
 
     Stack(A);
+    Queue(A);
+    */
 
     return 0;
 }

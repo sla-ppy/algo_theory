@@ -193,4 +193,17 @@ Analogy between asymptotic comparison and the comparison of two real numbers.
 ---
 
 ## Stack 
+FILO - First In Last Out
+Stackpointer points The top element in the stack.
 
+A stack is like a pile of plates, we put plates on top of it and we are only able take the one on the top.
+
+## Queue
+FIFO - First In First Out
+
+Like cars in a tunnel, the cars enter at the entrance and they can either leave through the entrance or the end.  
+The cars also cannot change their position once in the queue.
+
+(As you wouldn't cut infront of someone in the grocery shop either, because that would be a dick move.)
+
+## 
